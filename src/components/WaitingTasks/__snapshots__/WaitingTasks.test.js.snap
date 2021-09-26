@@ -1,24 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render WaitingTasks component 1`] = `
-<article>
+<article
+  className="tasks-wrap"
+>
   <header>
     Zadania w kolejce
   </header>
   <ul>
-    <li>
-      <span>
-        test
+    <li
+      className="task"
+    >
+      <p>
+        <span>
+          czas: 
+        </span>
          
-      </span>
+        5
+         sekund 
+      </p>
+      <p>
+        <span>
+          priorytet: 
+        </span>
+         
+        3
+      </p>
       <button
+        className="delete-btn"
         onClick={[Function]}
       >
         usuń
       </button>
-      <p>
-        3
-      </p>
     </li>
   </ul>
 </article>

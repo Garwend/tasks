@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import './CreateTask.less';
+
 const CreateTask = ({ setWaitingTasks, setCurrentTasks }) => {
     const [priority, setPriority] = useState(1);
 
@@ -9,7 +11,7 @@ const CreateTask = ({ setWaitingTasks, setCurrentTasks }) => {
 
     const handleClick = () => {
         const seconds = Math.floor(Math.random() * 6) + 5;
-        const task = { id: Date.now(), title: seconds, seconds, priority };
+        const task = { id: Date.now(), seconds, priority };
 
         setCurrentTasks(prevState => {
             if (prevState.length >= 10) {
@@ -34,7 +36,7 @@ const CreateTask = ({ setWaitingTasks, setCurrentTasks }) => {
     }
 
     return (
-        <section>
+        <section className='create-task-wrap'>
             <input type="number" name="priority" id="priority" min="1" data-testid="priority" onChange={handleChange} value={priority} />
             <button onClick={handleClick}>dodaj zadanie</button>
         </section>

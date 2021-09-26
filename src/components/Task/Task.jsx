@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 
-const Task = ({ id, title, seconds, priority, setCompletedTasks = null, setCurrentTasks = null, setWaitingTasks = null }) => {
+import './Task.less'
+
+const Task = ({ id, seconds, priority, setCompletedTasks = null, setCurrentTasks = null, setWaitingTasks = null }) => {
     useEffect(() => {
         if (setCurrentTasks !== null) {
             const timer = setTimeout(() => {
                 console.log(`Zadanie wykonane po ${seconds} sekundach`);
-                setCompletedTasks(prevState => [...prevState, { id, title, seconds }]);
+                setCompletedTasks(prevState => [...prevState, { id, seconds, priority }]);
                 setCurrentTasks(prevState => prevState.filter(task => task.id !== id));
                 let waitingTask = null;
                 setWaitingTasks(prevState => {
@@ -22,7 +24,7 @@ const Task = ({ id, title, seconds, priority, setCompletedTasks = null, setCurre
             return () => clearTimeout(timer)
         }
 
-    }, [id, title, seconds, setCompletedTasks, setCurrentTasks, setWaitingTasks])
+    }, [id, seconds, setCompletedTasks, setCurrentTasks, setWaitingTasks, priority])
 
     const handleClick = () => {
         if (setCurrentTasks !== null) {
@@ -35,10 +37,10 @@ const Task = ({ id, title, seconds, priority, setCompletedTasks = null, setCurre
     }
 
     return (
-        <li>
-            <span>{title} </span>
+        <li className='task'>
+            <p><span>czas: </span> {seconds} sekund </p>
+            <p><span>priorytet: </span> {priority}</p>
             <button className='delete-btn' onClick={handleClick}>usuń</button>
-            <p>{priority}</p>
         </li>
     )
 }

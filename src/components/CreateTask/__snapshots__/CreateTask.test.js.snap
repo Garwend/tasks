@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render CreateTask component 1`] = `
-<section>
+<section
+  className="create-task-wrap"
+>
   <input
     data-testid="priority"
     id="priority"

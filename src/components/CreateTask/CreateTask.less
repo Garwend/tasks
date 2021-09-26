@@ -1,0 +1,37 @@
+@add-color: green;
+@add-color-hover: rgb(0, 104, 0);
+@on-add-color: white;
+
+.flex-center-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-task-wrap {
+    height: 30vh;
+    .flex-center-column();
+
+    input {
+        font-size: 40px;
+        padding: 5px;
+        text-align: center;
+    }
+
+    button {
+        padding: 8px;
+        border: none;
+        margin-top: 30px;
+        border-radius: 10px;
+        font-size: 20px;
+        background-color: @add-color;
+        color: @on-add-color;
+        transition: .3s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: @add-color-hover;
+        }
+    }
+}
