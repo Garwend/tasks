@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render WaitingTasks component 1`] = `
+<article>
+  <header>
+    Zadania w kolejce
+  </header>
+  <ul>
+    <li>
+      <span>
+        test
+         
+      </span>
+      <button
+        onClick={[Function]}
+      >
+        usuń
+      </button>
+      <p>
+        3
+      </p>
+    </li>
+  </ul>
+</article>
+`;

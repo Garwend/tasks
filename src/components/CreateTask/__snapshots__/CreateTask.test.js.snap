@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render CreateTask component 1`] = `
+<section>
+  <input
+    data-testid="priority"
+    id="priority"
+    min="1"
+    name="priority"
+    onChange={[Function]}
+    type="number"
+    value={1}
+  />
+  <button
+    onClick={[Function]}
+  >
+    dodaj zadanie
+  </button>
+</section>
+`;
